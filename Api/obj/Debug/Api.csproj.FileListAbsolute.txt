@@ -267,3 +267,9 @@ C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.dll
 C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.pdb
 C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.removePrice.resources
 C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.addPrice.resources
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.ImagemUsuario.resources
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.Endereco.resources
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.EnderecoDB.resources
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.csprojResolveAssemblyReference.cache
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.usernew.resources
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.paymentId.resources

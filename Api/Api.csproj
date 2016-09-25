@@ -289,6 +289,26 @@
     <Compile Include="Migrations\201609250809286_addPrice.Designer.cs">
       <DependentUpon>201609250809286_addPrice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609250834357_ImagemUsuario.cs" />
+    <Compile Include="Migrations\201609250834357_ImagemUsuario.Designer.cs">
+      <DependentUpon>201609250834357_ImagemUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609250842093_Endereco.cs" />
+    <Compile Include="Migrations\201609250842093_Endereco.Designer.cs">
+      <DependentUpon>201609250842093_Endereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609250845040_EnderecoDB.cs" />
+    <Compile Include="Migrations\201609250845040_EnderecoDB.Designer.cs">
+      <DependentUpon>201609250845040_EnderecoDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609250927025_usernew.cs" />
+    <Compile Include="Migrations\201609250927025_usernew.Designer.cs">
+      <DependentUpon>201609250927025_usernew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609250933486_paymentId.cs" />
+    <Compile Include="Migrations\201609250933486_paymentId.Designer.cs">
+      <DependentUpon>201609250933486_paymentId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LioService.cs" />
@@ -390,6 +410,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609250809286_addPrice.resx">
       <DependentUpon>201609250809286_addPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250834357_ImagemUsuario.resx">
+      <DependentUpon>201609250834357_ImagemUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250842093_Endereco.resx">
+      <DependentUpon>201609250842093_Endereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250845040_EnderecoDB.resx">
+      <DependentUpon>201609250845040_EnderecoDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250927025_usernew.resx">
+      <DependentUpon>201609250927025_usernew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250933486_paymentId.resx">
+      <DependentUpon>201609250933486_paymentId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -37,10 +37,14 @@ namespace Api.Controllers
             using (var con = new SqlConnection(_conString))
             {
                 con.Open();
-                var user = await con.QueryAsync<Produto>(@"select * from Users where Id = @Id", new { Id = id });
+                var user = await con.QueryAsync<User>(@"select * from Users where Id = @Id", new { Id = id });
 
                 if (user == null)
                     return NotFound();
+
+                var addresses =
+                    await con.QueryAsync<Address>(@"select * from Addresses where UserId = @Id", new { Id = id });
+                user.FirstOrDefault().Addresses = addresses.ToList();
 
                 return Ok(user.FirstOrDefault());
             }
@@ -54,6 +58,14 @@ namespace Api.Controllers
             {
                 con.Open();
                 var user = await con.QueryAsync<User>(@"select * from Users");
+
+                var userIds = user.Select(x => x.Id);
+                var itens = await con.QueryAsync<Address>(@"select * from Addresses where UserId In @userIds", new { userIds });
+
+                foreach (var u in user)
+                {
+                    u.Addresses = itens.Where(x => x.UserId == u.Id).ToList();
+                }
 
                 return user;
             }

@@ -11,7 +11,7 @@ namespace Api.Services
             var restClient = new RestClient("https://api.cielo.com.br/sandbox-lio/order-management/v1/orders");
             var request = new RestRequest(Method.POST);
             request.AddHeader("client-id", "GfUSILNTi3yF");
-            request.AddHeader("merchant_id", "46770017-70ae-4ffd-bc99-6ebf22cdde4");
+            request.AddHeader("merchant_id", "46770017-70ae-4ffd-bc99-6ebf22cdde4d");
             request.AddHeader("access-token", "pndAvMo4D9kF");
             request.JsonSerializer = NewtonsoftJsonSerializer.Default;
             request.AddJsonBody(pedido);
@@ -24,7 +24,7 @@ namespace Api.Services
             var restClient = new RestClient("https://api.cielo.com.br/sandbox-lio/order-management/v1/orders/" + id);
             var request = new RestRequest(Method.GET);
             request.AddHeader("client-id", "GfUSILNTi3yF");
-            request.AddHeader("merchant_id", "46770017-70ae-4ffd-bc99-6ebf22cdde4");
+            request.AddHeader("merchant_id", "46770017-70ae-4ffd-bc99-6ebf22cdde4d");
             request.AddHeader("access-token", "pndAvMo4D9kF");
             var response = restClient.Execute<LioOrder>(request);
             return response.Data;

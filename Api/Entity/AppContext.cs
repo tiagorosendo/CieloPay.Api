@@ -19,5 +19,6 @@ namespace Api.Entity
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<LioOrder> Orders { get; set; }
         public DbSet<LioOrderItem> OrderItens { get; set; }
+        public DbSet<Address> Address { get; set; }    
     }
 }

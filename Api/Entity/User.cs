@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api.Entity
 {
@@ -9,6 +9,8 @@ namespace Api.Entity
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        public string Telefone { get; set; }
+        public string ImagemUrl { get; set; }
         public string OauthToken { get; set; }
         public List<Card> Cards { get; set; }
         public List<Address> Addresses { get; set; }
@@ -35,6 +37,7 @@ namespace Api.Entity
         public string ZipCode { get; set; }
         public string Neighborhood { get; set; }
         public string State { get; set; }
+        public User User { get; set; }
     }
 
     public class Pedido
@@ -66,8 +69,7 @@ namespace Api.Entity
             id = Guid.NewGuid();
         }
         public Guid id { get; set; }
-        public Guid Payment_Id { get; set; }
-
+        public Guid PaymentId { get; set; }
         public string number { get; set; }
         public string reference { get; set; }
         public string status { get; set; }

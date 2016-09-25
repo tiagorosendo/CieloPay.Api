@@ -30,10 +30,21 @@ namespace Api.Migrations
             context.Users.AddOrUpdate(new User
             {
                 Id = 1,
-                Email = "asd@email.com",
-                Name = "Teste",
-                OauthToken = "token"
+                Email = "bill@microsoft.com",
+                Name = "Tio Bill Gates",
+                OauthToken = "token",
+                ImagemUrl = "https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg",
+                Telefone = "2133445566"
             });
+
+            context.Address.AddOrUpdate(new Address
+            {
+                UserId = 1,
+                Number = "171",
+                Street = "Rua dos Bobos",
+                ZipCode = "20080080"
+            });
+
 
             context.Produtos.AddOrUpdate(new Produto
             {
