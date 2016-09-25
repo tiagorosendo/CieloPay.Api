@@ -87,7 +87,6 @@ namespace Api.Migrations
             var orderID = Guid.NewGuid();
             context.Orders.AddOrUpdate(new LioOrder
             {
-                price = 123123,
                 id = orderID,
                 UserId = 1
             });

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Api.Entity
 {
@@ -70,14 +71,14 @@ namespace Api.Entity
         public string number { get; set; }
         public string reference { get; set; }
         public string status { get; set; }
-        public string created_At { get; set; }
-        public string updated_At { get; set; }
+        public string created_at { get; set; }
+        public string updated_at { get; set; }
         public List<LioOrderItem> items { get; set; }
         public string notes { get; set; }
-        public decimal price { get; set; }
         public decimal remaining { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
+        public decimal price { get; set; }
         public string LioResponseId { get; set; }
         public ICollection<LioOrderItem> OrderItens { get; set; }
     }

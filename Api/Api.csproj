@@ -281,6 +281,14 @@
     <Compile Include="Migrations\201609250734349_itemsLower.Designer.cs">
       <DependentUpon>201609250734349_itemsLower.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609250744046_removePrice.cs" />
+    <Compile Include="Migrations\201609250744046_removePrice.Designer.cs">
+      <DependentUpon>201609250744046_removePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609250809286_addPrice.cs" />
+    <Compile Include="Migrations\201609250809286_addPrice.Designer.cs">
+      <DependentUpon>201609250809286_addPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LioService.cs" />
@@ -376,6 +384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609250734349_itemsLower.resx">
       <DependentUpon>201609250734349_itemsLower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250744046_removePrice.resx">
+      <DependentUpon>201609250744046_removePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250809286_addPrice.resx">
+      <DependentUpon>201609250809286_addPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

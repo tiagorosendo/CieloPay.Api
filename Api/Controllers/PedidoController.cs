@@ -10,6 +10,7 @@ using System.Web.Http;
 using Api.Entity;
 using Api.Services;
 using Dapper;
+using WebGrease.Css.Extensions;
 
 namespace Api.Controllers
 {
@@ -37,10 +38,9 @@ namespace Api.Controllers
                 itemPedido.OrderId = pedido.id;
                 _context.OrderItens.Add(itemPedido);
             }
-
-            await _context.SaveChangesAsync();
             var response = _lioService.CriarPedido(pedido);
             pedido.LioResponseId = response.Id ?? "nulo";
+            await _context.SaveChangesAsync();
             return Content(HttpStatusCode.Created, pedido);
         }
 
@@ -65,6 +65,10 @@ namespace Api.Controllers
                 foreach (var ped in pedidos)
                 {
                     ped.items = itens.Where(x => x.OrderId == ped.id).ToList();
+                    itens.Where(x => x.OrderId == ped.id).ForEach(x =>
+                     {
+                         ped.price += x.unit_price * x.quantity;
+                     });
                 }
                 return pedidos;
             }
@@ -94,6 +98,10 @@ namespace Api.Controllers
                 query = "select * from LioOrderItems where OrderId = @Id";
                 var itens = await con.QueryAsync<LioOrderItem>(query, new { Id = id });
                 pedido.items = itens.ToList();
+                foreach (var lioOrderItem in pedido.items)
+                {
+                    pedido.price += lioOrderItem.quantity * lioOrderItem.unit_price;
+                }
                 return Ok(pedido);
             }
         }
