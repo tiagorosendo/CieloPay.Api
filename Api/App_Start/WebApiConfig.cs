@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
+using Api.Entity;
 using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace Api
@@ -25,6 +27,14 @@ namespace Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Formatters.JsonFormatter
+            .SerializerSettings
+            .ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+
+            config.Formatters.JsonFormatter
+            .SerializerSettings
+            .NullValueHandling = NullValueHandling.Ignore;
         }
     }
 }

@@ -1,9 +1,9 @@
+using System;
+using Api.Entity;
+
 namespace Api.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Api.Entity.AppContext>
     {
@@ -26,6 +26,81 @@ namespace Api.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Users.AddOrUpdate(new User
+            {
+                Id = 1,
+                Email = "asd@email.com",
+                Name = "Teste",
+                OauthToken = "token"
+            });
+
+            context.Produtos.AddOrUpdate(new Produto
+            {
+                Name = "BirlBurguer",
+                Price = 123,
+                Rate = 4,
+                Description = "Hamburguer do bambam.",
+                Image = "http://www.villaburguer.com.br/images/burguer-home.png"
+            },
+            new Produto
+            {
+                Name = "HackBurguer",
+                Price = 15,
+                Rate = 5,
+                Description = "Hamburguer da hackathon.",
+                Image = "http://www.bossame.com.br/wp-content/uploads/2015/10/Riso-Burguer_Riso_Alta_CredTomasRangel_menor.jpg"
+            },
+            new Produto
+            {
+                Name = "GordoCombo",
+                Price = 30,
+                Rate = 5,
+                Description = "Combo de Hamburguer Gourmer + Stella",
+                Image = "https://media-cdn.tripadvisor.com/media/photo-s/09/67/6e/dc/hell-s-burguer.jpg"
+            },
+            new Produto
+            {
+                Name = "BigBurguer",
+                Price = 10,
+                Rate = 2,
+                Description = "Hamburguer de 2 carnes + coca.",
+                Image = "http://clubevipmais.com/wp-content/uploads/logotipo-lanchonete-big-burguer-opt.jpg"
+            },
+            new Produto
+            {
+                Name = "Batata Fusion",
+                Price = 30,
+                Rate = 1,
+                Description = "Batata Frita com bacon",
+                Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_VRxdK6Cm3jGqeaTuDLL88phxgfb-HjbxN8TOeJvhgBRYMp0B"
+            },
+            new Produto
+            {
+                Name = "Pizza Elite Grande",
+                Price = 45,
+                Rate = 2,
+                Description = "Pizza sabor da casa ",
+                Image = "http://elitepizzari.com/wp-content/uploads/2013/03/Spinach-Feta-Pizza-main-slide.jpg"
+            });
+
+            var orderID = Guid.NewGuid();
+            context.Orders.AddOrUpdate(new LioOrder
+            {
+                price = 123123,
+                id = orderID,
+                UserId = 1
+            });
+
+            context.OrderItens.AddOrUpdate(new LioOrderItem
+            {
+                OrderId = orderID,
+                name = "Teste",
+                unit_price = 123,
+                sku = new Random(132).ToString()
+
+            });
+
         }
     }
 }
