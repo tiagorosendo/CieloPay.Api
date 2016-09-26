@@ -49,7 +49,7 @@ namespace Api.Migrations
             context.Produtos.AddOrUpdate(new Produto
             {
                 Name = "BirlBurguer",
-                Price = 123,
+                Price = 18.30m,
                 Rate = 4,
                 Description = "Hamburguer do bambam.",
                 Image = "http://www.villaburguer.com.br/images/burguer-home.png"
@@ -57,7 +57,7 @@ namespace Api.Migrations
             new Produto
             {
                 Name = "HackBurguer",
-                Price = 15,
+                Price = 15.00m,
                 Rate = 5,
                 Description = "Hamburguer da hackathon.",
                 Image = "http://www.bossame.com.br/wp-content/uploads/2015/10/Riso-Burguer_Riso_Alta_CredTomasRangel_menor.jpg"
@@ -65,7 +65,7 @@ namespace Api.Migrations
             new Produto
             {
                 Name = "GordoCombo",
-                Price = 30,
+                Price = 30.00m,
                 Rate = 5,
                 Description = "Combo de Hamburguer Gourmer + Stella",
                 Image = "https://media-cdn.tripadvisor.com/media/photo-s/09/67/6e/dc/hell-s-burguer.jpg"
@@ -73,7 +73,7 @@ namespace Api.Migrations
             new Produto
             {
                 Name = "BigBurguer",
-                Price = 10,
+                Price = 10.50m,
                 Rate = 2,
                 Description = "Hamburguer de 2 carnes + coca.",
                 Image = "http://clubevipmais.com/wp-content/uploads/logotipo-lanchonete-big-burguer-opt.jpg"
@@ -81,7 +81,7 @@ namespace Api.Migrations
             new Produto
             {
                 Name = "Batata Fusion",
-                Price = 30,
+                Price = 33.50m,
                 Rate = 1,
                 Description = "Batata Frita com bacon",
                 Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_VRxdK6Cm3jGqeaTuDLL88phxgfb-HjbxN8TOeJvhgBRYMp0B"
@@ -89,7 +89,7 @@ namespace Api.Migrations
             new Produto
             {
                 Name = "Pizza Elite Grande",
-                Price = 45,
+                Price = 45.00m,
                 Rate = 2,
                 Description = "Pizza sabor da casa ",
                 Image = "http://elitepizzari.com/wp-content/uploads/2013/03/Spinach-Feta-Pizza-main-slide.jpg"

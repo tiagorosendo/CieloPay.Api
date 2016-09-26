@@ -309,6 +309,14 @@
     <Compile Include="Migrations\201609250933486_paymentId.Designer.cs">
       <DependentUpon>201609250933486_paymentId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609251027109_velocity.cs" />
+    <Compile Include="Migrations\201609251027109_velocity.Designer.cs">
+      <DependentUpon>201609251027109_velocity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609251036070_imageUrl.cs" />
+    <Compile Include="Migrations\201609251036070_imageUrl.Designer.cs">
+      <DependentUpon>201609251036070_imageUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LioService.cs" />
@@ -425,6 +433,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609250933486_paymentId.resx">
       <DependentUpon>201609250933486_paymentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609251027109_velocity.resx">
+      <DependentUpon>201609251027109_velocity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609251036070_imageUrl.resx">
+      <DependentUpon>201609251036070_imageUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

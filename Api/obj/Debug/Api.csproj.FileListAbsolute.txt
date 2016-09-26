@@ -273,3 +273,5 @@ C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.EnderecoDB.resource
 C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.csprojResolveAssemblyReference.cache
 C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.usernew.resources
 C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.paymentId.resources
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.velocity.resources
+C:\tfs\apicielopay\CieloPay.Api\Api\obj\Debug\Api.Migrations.imageUrl.resources

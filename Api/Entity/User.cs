@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace Api.Entity
 {
@@ -15,7 +16,6 @@ namespace Api.Entity
         public List<Card> Cards { get; set; }
         public List<Address> Addresses { get; set; }
         public ICollection<Pedido> Pedidos { get; set; }
-
     }
 
     public class Card
@@ -67,6 +67,7 @@ namespace Api.Entity
         public LioOrder()
         {
             id = Guid.NewGuid();
+            updated_at = DateTime.Now.AddHours(-3).ToString("s");
         }
         public Guid id { get; set; }
         public Guid PaymentId { get; set; }
@@ -82,6 +83,7 @@ namespace Api.Entity
         public User User { get; set; }
         public decimal price { get; set; }
         public string LioResponseId { get; set; }
+        public bool VelocityApproved { get; set; }
         public ICollection<LioOrderItem> OrderItens { get; set; }
     }
 
@@ -103,6 +105,7 @@ namespace Api.Entity
         public string created_at { get; set; }
         public string updated_at { get; set; }
         public Guid OrderId { get; set; }
+        public string ImageUrl { get; set; }
         public LioOrder Order { get; set; }
     }
 

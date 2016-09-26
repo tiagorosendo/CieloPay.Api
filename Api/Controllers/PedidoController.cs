@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Api.Entity;
@@ -31,6 +30,7 @@ namespace Api.Controllers
         [Route("api/pedido", Name = "Pedido")]
         public async Task<IHttpActionResult> Post(LioOrder pedido)
         {
+
             _context.Orders.Add(pedido);
 
             foreach (var itemPedido in pedido.items)
@@ -64,12 +64,21 @@ namespace Api.Controllers
                 var itens = await con.QueryAsync<LioOrderItem>(query, new { pedidoIds });
                 foreach (var ped in pedidos)
                 {
+                    if (ped.User != null)
+                    {
+                        var queryAd = @"select * from Addresses where UserId = @Id";
+                        var addresses = con.Query<Address>(queryAd, new { Id = ped.User.Id });
+                        ped.User.Addresses = addresses.ToList();
+                    }
+
                     ped.items = itens.Where(x => x.OrderId == ped.id).ToList();
                     itens.Where(x => x.OrderId == ped.id).ForEach(x =>
                      {
                          ped.price += x.unit_price * x.quantity;
                      });
                 }
+
+
                 return pedidos;
             }
         }
@@ -95,6 +104,13 @@ namespace Api.Controllers
                     return NotFound();
                 }
 
+                if (pedido.User != null)
+                {
+                    var queryAd = @"select * from Addresses where UserId = @Id";
+                    var addresses = con.Query<Address>(queryAd, new { Id = pedido.User.Id });
+                    pedido.User.Addresses = addresses.ToList();
+                }
+
                 query = "select * from LioOrderItems where OrderId = @Id";
                 var itens = await con.QueryAsync<LioOrderItem>(query, new { Id = id });
                 pedido.items = itens.ToList();
@@ -102,6 +118,8 @@ namespace Api.Controllers
                 {
                     pedido.price += lioOrderItem.quantity * lioOrderItem.unit_price;
                 }
+
+
                 return Ok(pedido);
             }
         }
